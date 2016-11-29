@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Brand
+
+# Model Form Field configuration
+form: $/vojtasvoboda/brands/models/brand/fields.yaml
+
+# Model Class name
+modelClass: VojtaSvoboda\Brands\Models\Brand
+
+# Default redirect location
+defaultRedirect: vojtasvoboda/brands/brands
+
+# Create page
+create:
+    title: Create Brand
+    redirect: vojtasvoboda/brands/brands/update/:id
+    redirectClose: vojtasvoboda/brands/brands
+
+# Update page
+update:
+    title: Edit Brand
+    redirect: vojtasvoboda/brands/brands
+    redirectClose: vojtasvoboda/brands/brands
+
+# Preview page
+preview:
+    title: Preview Brand

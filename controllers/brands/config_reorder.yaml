@@ -1,0 +1,5 @@
+title: Brands
+modelClass: VojtaSvoboda\Brands\Models\Brand
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: vojtasvoboda.brands::lang.columns.brand.name
+        searchable: true
+        sortable: true
+    sort_order:
+        label: vojtasvoboda.brands::lang.columns.brand.sort_order
+        sortable: true
+    categories:
+        label: vojtasvoboda.brands::lang.columns.brand.categories
+        relation: categories
+        select: name

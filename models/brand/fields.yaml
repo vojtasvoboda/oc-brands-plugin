@@ -1,0 +1,35 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: vojtasvoboda.brands::lang.fields.brand.name
+        span: left
+    slug:
+        label: vojtasvoboda.brands::lang.fields.brand.slug
+        span: right
+        preset:
+            field: name
+            type: slug
+tabs:
+    fields:
+        description:
+            tab: vojtasvoboda.brands::lang.fields.brand.description
+            label: vojtasvoboda.brands::lang.fields.brand.description
+            type: richeditor
+        cover:
+            tab: vojtasvoboda.brands::lang.fields.brand.images
+            label: vojtasvoboda.brands::lang.fields.brand.cover
+            type: fileupload
+            mode: image
+        images:
+            tab: vojtasvoboda.brands::lang.fields.brand.images
+            label: vojtasvoboda.brands::lang.fields.brand.gallery
+            type: fileupload
+            mode: image
+        categories:
+            tab: vojtasvoboda.brands::lang.fields.brand.categories
+            label: vojtasvoboda.brands::lang.fields.brand.categories
+            type: relation
+            nameFrom: name
