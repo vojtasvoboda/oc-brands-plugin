@@ -85,10 +85,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            /*
             'VojtaSvoboda\Brands\Components\Brands' => 'brands',
             'VojtaSvoboda\Brands\Components\Brand' => 'brand',
-            */
         ];
     }
 }

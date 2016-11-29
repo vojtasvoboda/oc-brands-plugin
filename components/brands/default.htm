@@ -1,0 +1,18 @@
+<div class="brands">
+
+    {% for brand in __SELF__.brands %}
+    <div class="item col-md-2">
+        <a href="{{ url('brand/' ~ brand.url) }}">
+            {% if brand.cover() %}
+            <img src="{{ gallery.cover().getThumb(300, 300, 'crop') }}" alt="{{ brand.name }}">
+            {% endif %}
+            <div class="info">
+                <p>{{ brand.name }}<br />{{ brand.created_at|date('d. m. Y') }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+
+    {% partial __SELF__ ~ "::paginating" items=__SELF__.brands pagePath=__SELF__.pagePath %}
+
+</div>

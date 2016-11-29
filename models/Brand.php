@@ -50,4 +50,42 @@ class Brand extends Model
     {
         return $query->where('enabled', true);
     }
+
+    /**
+     * Lists brands for the front end.
+     *
+     * @param \October\Rain\Database\Builder $query
+     * @param array $options Display options
+     *
+     * @return self
+     */
+    public function scopeListFrontEnd($query, $options)
+    {
+        /*
+         * Default options
+         */
+        extract(array_merge([
+            'page'       => 1,
+            'perPage'    => 10,
+            'sort'       => 'sort_order',
+            'sortOrder'  => 'ASC',
+            'search'     => '',
+            'enabled'    => true,
+        ], $options));
+
+        $searchableFields = ['name'];
+
+        if ($enabled) {
+            $query->isEnabled();
+        }
+
+        $query->orderBy($sort, $sortOrder);
+
+        $search = trim($search);
+        if (strlen($search)) {
+            $query->searchWhere($search, $searchableFields);
+        }
+
+        return $query->paginate($perPage, $page);
+    }
 }

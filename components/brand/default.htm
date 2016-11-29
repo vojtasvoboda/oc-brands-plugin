@@ -1,0 +1,17 @@
+{% set item = __SELF__.item %}
+
+{% if item.images.count %}
+<div class="brand">
+
+    <h1>{{ brand.name }}</h1>
+
+    {% for image in item.images %}
+    <div class="images">
+        <a href="{{ image.getThumb(1200, 800, 'auto') }}" title="{{ image.title }}">
+            <img src="{{ image.getThumb(300, 300, 'crop') }}" alt="{{ image.title }}">
+        </a>
+    </div>
+    {% endfor %}
+
+</div>
+{% endif %}
