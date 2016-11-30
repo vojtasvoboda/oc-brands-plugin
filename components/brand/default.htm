@@ -1,17 +1,36 @@
-{% set item = __SELF__.item %}
-
-{% if item.images.count %}
+{% set brand = __SELF__.item %}
 <div class="brand">
 
     <h1>{{ brand.name }}</h1>
 
-    {% for image in item.images %}
-    <div class="images">
-        <a href="{{ image.getThumb(1200, 800, 'auto') }}" title="{{ image.title }}">
-            <img src="{{ image.getThumb(300, 300, 'crop') }}" alt="{{ image.title }}">
-        </a>
+    {% if brand.categories %}
+    <div class="categories">
+        {% for category in brand.categories %}
+        <span class="category label label-default">{{ category.name }}</span>
+        {% endfor %}
     </div>
-    {% endfor %}
+    {% endif %}
+
+    {% if brand.logo %}
+    <div class="logo">
+        <img src="{{ brand.logo.getThumb(100, 100, 'auto') }}" alt="{{ brand.name }}" class="img-responsive" />
+    </div>
+    {% endif %}
+
+    <div class="description">
+        {{ brand.description | raw }}
+    </div>
+
+    {% if item.images.count %}
+    <div class="row images">
+        {% for image in item.images %}
+        <div class="image col-md-4">
+            <a href="{{ image.getThumb(1200, 800, 'auto') }}" title="{{ image.title }}">
+                <img src="{{ image.getThumb(300, 300, 'auto') }}" alt="{{ image.title }}" class="img-responsive" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
 </div>
-{% endif %}

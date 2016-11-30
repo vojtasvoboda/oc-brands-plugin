@@ -22,7 +22,7 @@ class Brand extends ComponentBase
                 'title' => 'Brand slug',
                 'description' => 'Slug for display one particular brand',
                 'type' => 'string',
-                'default' => '{{ slug }}',
+                'default' => '{{ :slug }}',
             ],
         ];
     }

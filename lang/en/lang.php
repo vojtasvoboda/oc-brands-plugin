@@ -40,7 +40,7 @@ return [
             'slug' => 'Slug',
             'description' => 'Description',
             'images' => 'Images',
-            'cover' => 'Logo',
+            'logo' => 'Logo',
             'gallery' => 'Gallery',
         ],
         'category' => [

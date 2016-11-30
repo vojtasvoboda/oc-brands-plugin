@@ -1,17 +1,24 @@
 {% if items.lastPage > 1 %}
-<div class="pagging">
-    {% if items.currentPage > 1 %}
-    <a href="{{ url(pagePath) }}{% if currentPage > 1 %}?page={{ items.currentPage-1 }}{% endif %}#paginated">&lt; Previous</a>
-    {% endif %}
+<div class="col-sm-12">
+    <ul class="pagination">
+        {% if items.currentPage > 1 %}
+        <li>
+            <a href="{{ url(pagePath) }}{% if currentPage > 1 %}?page={{ items.currentPage-1 }}{% endif %}#paginated">&lt; Previous</a>
+        </li>
+        {% endif %}
 
-    {% for page in 1..items.lastPage %}
-    <a
-        href="{{ url(pagePath) }}{% if page > 1 %}?page={{ page }}{% endif %}#paginated"
-        {% if items.currentPage == page %} class="active"{% endif %}>{{ page }}</a>
-    {% endfor %}
+        {% for page in 1..items.lastPage %}
+        <li>
+            <a href="{{ url(pagePath) }}{% if page > 1 %}?page={{ page }}{% endif %}#paginated"
+            {% if items.currentPage == page %} class="active"{% endif %}>{{ page }}</a>
+        </li>
+        {% endfor %}
 
-    {% if items.lastPage > items.currentPage %}
-    <a href="{{ url(pagePath) }}?page={{ items.currentPage+1 }}#paginated">Next &gt;</a>
-    {% endif %}
+        {% if items.lastPage > items.currentPage %}
+        <li>
+            <a href="{{ url(pagePath) }}?page={{ items.currentPage+1 }}#paginated">Next &gt;</a>
+        </li>
+        {% endif %}
+    </ul>
 </div>
 {% endif %}

@@ -29,7 +29,7 @@ class Brand extends Model
     public $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public $attachOne = [
-        'cover' => ['System\Models\File'],
+        'logo' => ['System\Models\File'],
     ];
 
     public $attachMany = [

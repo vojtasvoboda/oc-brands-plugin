@@ -18,11 +18,13 @@ tabs:
             tab: vojtasvoboda.brands::lang.fields.brand.description
             label: vojtasvoboda.brands::lang.fields.brand.description
             type: richeditor
-        cover:
+        logo:
             tab: vojtasvoboda.brands::lang.fields.brand.images
-            label: vojtasvoboda.brands::lang.fields.brand.cover
+            label: vojtasvoboda.brands::lang.fields.brand.logo
             type: fileupload
             mode: image
+            imageWidth: 100
+            imageHeight: 100
         images:
             tab: vojtasvoboda.brands::lang.fields.brand.images
             label: vojtasvoboda.brands::lang.fields.brand.gallery
