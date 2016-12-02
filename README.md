@@ -16,3 +16,4 @@
 - add page for categories for showing brands in categories
 - brand detail - paginator for gallery
 - brand detail - link to categories
+- update SiteSearch plugin
