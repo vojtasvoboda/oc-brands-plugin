@@ -18,6 +18,11 @@ tabs:
             tab: vojtasvoboda.brands::lang.fields.brand.description
             label: vojtasvoboda.brands::lang.fields.brand.description
             type: richeditor
+        categories:
+            tab: vojtasvoboda.brands::lang.fields.brand.categories
+            label: vojtasvoboda.brands::lang.fields.brand.categories
+            type: relation
+            nameFrom: name
         logo:
             tab: vojtasvoboda.brands::lang.fields.brand.images
             label: vojtasvoboda.brands::lang.fields.brand.logo
@@ -30,8 +35,3 @@ tabs:
             label: vojtasvoboda.brands::lang.fields.brand.gallery
             type: fileupload
             mode: image
-        categories:
-            tab: vojtasvoboda.brands::lang.fields.brand.categories
-            label: vojtasvoboda.brands::lang.fields.brand.categories
-            type: relation
-            nameFrom: name
