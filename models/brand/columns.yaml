@@ -4,13 +4,17 @@
 
 columns:
     name:
-        label: vojtasvoboda.brands::lang.columns.brand.name
+        label: vojtasvoboda.brands::lang.labels.brand.name
         searchable: true
         sortable: true
     sort_order:
-        label: vojtasvoboda.brands::lang.columns.brand.sort_order
+        label: vojtasvoboda.brands::lang.labels.brand.sort_order
         sortable: true
     categories:
-        label: vojtasvoboda.brands::lang.columns.brand.categories
+        label: vojtasvoboda.brands::lang.labels.brand.categories
         relation: categories
         select: name
+    enabled:
+        label: vojtasvoboda.brands::lang.labels.brand.enabled
+        type: switch
+        sortable: true

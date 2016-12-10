@@ -4,16 +4,19 @@
 
 fields:
     name:
-        label: vojtasvoboda.brands::lang.fields.category.name
+        label: vojtasvoboda.brands::lang.labels.category.name
         span: left
         searchable: true
     slug:
-        label: vojtasvoboda.brands::lang.fields.category.slug
+        label: vojtasvoboda.brands::lang.labels.category.slug
         span: right
         preset:
             field: name
             type: slug
+    enabled:
+        label: vojtasvoboda.brands::lang.labels.brand.enabled
+        type: switch
     description:
-        label: vojtasvoboda.brands::lang.fields.category.description
+        label: vojtasvoboda.brands::lang.labels.category.description
         type: richeditor
         searchable: false

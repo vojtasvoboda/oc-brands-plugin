@@ -4,34 +4,37 @@
 
 fields:
     name:
-        label: vojtasvoboda.brands::lang.fields.brand.name
+        label: vojtasvoboda.brands::lang.labels.brand.name
         span: left
     slug:
-        label: vojtasvoboda.brands::lang.fields.brand.slug
+        label: vojtasvoboda.brands::lang.labels.brand.slug
         span: right
         preset:
             field: name
             type: slug
+    enabled:
+        label: vojtasvoboda.brands::lang.labels.brand.enabled
+        type: switch
 tabs:
     fields:
         description:
-            tab: vojtasvoboda.brands::lang.fields.brand.description
-            label: vojtasvoboda.brands::lang.fields.brand.description
+            tab: vojtasvoboda.brands::lang.labels.brand.description
+            label: vojtasvoboda.brands::lang.labels.brand.description
             type: richeditor
         categories:
-            tab: vojtasvoboda.brands::lang.fields.brand.categories
-            label: vojtasvoboda.brands::lang.fields.brand.categories
+            tab: vojtasvoboda.brands::lang.labels.brand.categories
+            label: vojtasvoboda.brands::lang.labels.brand.categories
             type: relation
             nameFrom: name
         logo:
-            tab: vojtasvoboda.brands::lang.fields.brand.images
-            label: vojtasvoboda.brands::lang.fields.brand.logo
+            tab: vojtasvoboda.brands::lang.labels.brand.images
+            label: vojtasvoboda.brands::lang.labels.brand.logo
             type: fileupload
             mode: image
             imageWidth: 100
             imageHeight: 100
         images:
-            tab: vojtasvoboda.brands::lang.fields.brand.images
-            label: vojtasvoboda.brands::lang.fields.brand.gallery
+            tab: vojtasvoboda.brands::lang.labels.brand.images
+            label: vojtasvoboda.brands::lang.labels.brand.gallery
             type: fileupload
             mode: image
