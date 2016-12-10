@@ -11,22 +11,6 @@ use System\Classes\PluginBase;
 class Plugin extends PluginBase
 {
     /**
-     * Plugin details.
-     *
-     * @return array
-     */
-    public function pluginDetails()
-    {
-        return [
-            'name'        => 'vojtasvoboda.brands::lang.plugin.name',
-            'description' => 'vojtasvoboda.brands::lang.plugin.description',
-            'author'      => 'Vojta Svoboda',
-            'icon'        => 'icon-tags',
-            'homepage'    => 'https://github.com/vojtasvoboda/oc-brands-plugin',
-        ];
-    }
-
-    /**
      * Register permissions.
      *
      * @return array

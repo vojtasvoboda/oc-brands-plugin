@@ -1,0 +1,6 @@
+plugin:
+    name: 'vojtasvoboda.brands::lang.plugin.name'
+    description: 'vojtasvoboda.brands::lang.plugin.description'
+    author: 'Vojta Svoboda'
+    icon: 'icon-tags'
+    homepage: 'https://github.com/vojtasvoboda/oc-brands-plugin'
