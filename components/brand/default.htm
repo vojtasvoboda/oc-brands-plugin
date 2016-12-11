@@ -6,7 +6,11 @@
     {% if brand.categories %}
     <div class="categories">
         {% for category in brand.categories %}
-        <span class="category label label-default">{{ category.name }}</span>
+        <a href="{{ category.url }}">
+            <span class="category label label-default">
+                {{ category.name }}
+            </span>
+        </a>
         {% endfor %}
     </div>
     {% endif %}

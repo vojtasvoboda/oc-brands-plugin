@@ -72,8 +72,8 @@ class Brands extends ComponentBase
                 'group' => 'Paginator',
             ],
             'sortOrder' => [
-                'title' => 'Brand order',
-                'description' => 'If brand will be rendered ascendent or descendent.',
+                'title' => 'Sort order',
+                'description' => 'If brands will be rendered ascendent or descendent',
                 'type' => 'dropdown',
                 'default' => 'ASC',
                 'group' => 'Paginator',
