@@ -17,3 +17,5 @@
 - brand detail - paginator for gallery
 - brand detail - link to categories
 - update SiteSearch plugin
+
+Icon by [Vector Markets](http://www.flaticon.com/authors/vectors-market) at flaticon.com.
