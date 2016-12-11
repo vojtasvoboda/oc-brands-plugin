@@ -16,6 +16,7 @@ fields:
     enabled:
         label: vojtasvoboda.brands::lang.labels.brand.enabled
         type: switch
+        default: true
     description:
         label: vojtasvoboda.brands::lang.labels.category.description
         type: richeditor

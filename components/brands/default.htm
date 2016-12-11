@@ -2,11 +2,22 @@
 
     <div class="row">
         {% for brand in __SELF__.brands %}
-        <div class="item col-md-{{ columnSize }}">
+        <div class="item col-md-{{ __SELF__.columnSize }}">
             <a href="{{ brand.url }}">
                 {% if brand.logo %}
-                <img src="{{ brand.logo.getThumb(logoWidth, logoHeight, 'auto') }}" alt="{{ brand.name }}" class="img-responsive" />
+                <img src="{{ brand.logo.getThumb(__SELF__.logoWidth, __SELF__.logoHeight, 'auto') }}" alt="{{ brand.name }}" class="img-responsive" />
                 {% endif %}
+            </a>
+            {% if brand.categories %}
+            <div class="categories">
+                {% for category in brand.categories %}
+                <a href="{{ category.url }}">
+                    <span class="category label label-default">{{ category.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <a href="{{ brand.url }}">
                 {{ brand.name }}
             </a>
         </div>

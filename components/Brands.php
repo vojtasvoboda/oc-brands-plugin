@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Request;
 use VojtaSvoboda\Brands\Models\Brand;
+use VojtaSvoboda\Brands\Models\Category;
 
 class Brands extends ComponentBase
 {
@@ -12,6 +13,24 @@ class Brands extends ComponentBase
 
     /** @var string $pagePath Full page URL. */
     public $pagePath;
+
+    /** @var Category $category */
+    public $category;
+
+    /** @var string $detailPage Reference to the page name for linking to brand detail. */
+    public $brandPage;
+
+    /** @var string $categoryPage Reference to the page name for linking to categories. */
+    public $categoryPage;
+
+    /** @var string $logoWidth */
+    public $logoWidth;
+
+    /** @var string $logoHeight */
+    public $logoHeight;
+
+    /** @var int $columnSize */
+    public $columnSize;
 
     public function componentDetails()
     {
@@ -24,11 +43,24 @@ class Brands extends ComponentBase
     public function defineProperties()
     {
         return [
-            'detailPage' => [
-                'title' => 'Detail page',
+            'brandPage' => [
+                'title' => 'Brand page',
                 'description' => 'Page for showing brand detail',
                 'type' => 'dropdown',
                 'default' => 'brand-detail',
+            ],
+            'categoryPage' => [
+                'title' => 'Category page',
+                'description' => 'Page for showing brand category',
+                'type' => 'dropdown',
+                'default' => 'brands',
+            ],
+            'categoryFilter' => [
+                'title' => 'Category slug',
+                'description' => 'Show only brands from some category',
+                'type' => 'string',
+                'default' => '{{ :category }}',
+                'group' => 'Category',
             ],
             'perPage' => [
                 'title' => 'Brands per page',
@@ -85,11 +117,22 @@ class Brands extends ComponentBase
 
     public function onRun()
     {
+        // category filter
+        if ($category = $this->property('categoryFilter')) {
+            $this->category = $this->getCategory($category);
+        }
+        $this->page['category'] = $this->category;
+
+        // page links
+        $this->brandPage = $this->page['brandPage'] = $this->property('brandPage');
+        $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
+
+        // brands vars
         $this->brands = $this->page['brands'] = $this->listItems();
         $this->pagePath = $this->page['pagePath'] = Request::path();
-        $this->page['columnSize'] = 12 / $this->property('perRow');
-        $this->page['logoWidth'] = $this->property('logoWidth');
-        $this->page['logoHeight'] = $this->property('logoHeight');
+        $this->columnSize = 12 / $this->property('perRow');
+        $this->logoWidth = $this->property('logoWidth');
+        $this->logoHeight = $this->property('logoHeight');
     }
 
     /**
@@ -99,41 +142,76 @@ class Brands extends ComponentBase
      */
     protected function listItems()
     {
-        $items = Brand::listFrontEnd([
+        $parameters = [
             'page' => $this->property('pageNumber'),
             'perPage' => $this->property('perPage'),
             'sortOrder' => $this->property('sortOrder'),
-        ]);
+        ];
 
-        return $this->getDetailPageUrl($items);
+        if ($this->category) {
+            $parameters['category'] = $this->category;
+        }
+
+        $items = Brand::listFrontEnd($parameters);
+
+        return $this->addLinksTo($items);
     }
 
     /**
-     * Add URL heading to brand detail for each brand.
+     * Add links to brands.
      *
      * @param $items
      *
-     * @return mixed
+     * @return array
      */
-    protected function getDetailPageUrl($items)
+    protected function addLinksTo($items)
     {
-        $detailPage = $this->property('detailPage');
+        $detailPage = $this->brandPage;
+        $categoryPage = $this->categoryPage;
 
-        $items->each(function ($item) use ($detailPage) {
+        $items->each(function ($item) use ($detailPage, $categoryPage) {
             $item->url = $this->controller->pageUrl($detailPage, [
                 'slug' => $item->slug,
             ]);
+
+            $item->categories->each(function($category) use ($categoryPage) {
+                $category->url = $this->controller->pageUrl($categoryPage, [
+                    'category' => $category->slug,
+                ]);
+            });
         });
 
         return $items;
     }
 
     /**
-     * Get options for the dropdown where the link to the item page can be selected.
+     * Get category by slug.
+     *
+     * @param $category
+     *
+     * @return mixed
+     */
+    public function getCategory($category)
+    {
+        return Category::where('slug', $category)->first();
+    }
+
+    /**
+     * Get options for the dropdown where the link to the brand page can be selected.
      *
      * @return array
      */
-    public function getDetailPageOptions()
+    public function getBrandPageOptions()
+    {
+        return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
+    }
+
+    /**
+     * Get options for the dropdown whre the link to the category page can be selected.
+     *
+     * @return mixed
+     */
+    public function getCategoryPageOptions()
     {
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }

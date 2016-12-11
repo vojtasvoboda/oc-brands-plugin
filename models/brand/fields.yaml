@@ -15,6 +15,7 @@ fields:
     enabled:
         label: vojtasvoboda.brands::lang.labels.brand.enabled
         type: switch
+        default: true
 tabs:
     fields:
         description:

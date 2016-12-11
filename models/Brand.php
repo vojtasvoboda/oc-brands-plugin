@@ -61,9 +61,7 @@ class Brand extends Model
      */
     public function scopeListFrontEnd($query, $options)
     {
-        /*
-         * Default options
-         */
+        // default config
         extract(array_merge([
             'page'       => 1,
             'perPage'    => 10,
@@ -71,16 +69,28 @@ class Brand extends Model
             'sortOrder'  => 'ASC',
             'search'     => '',
             'enabled'    => true,
+            'category'   => null,
         ], $options));
 
+        // search by config
         $searchableFields = ['name'];
 
+        // only enabled
         if ($enabled) {
             $query->isEnabled();
         }
 
+        // category filtration
+        if ($category instanceof Category) {
+            $query->whereHas('categories', function ($query) use ($category) {
+                $query->where('category_id', $category->id);
+            });
+        }
+
+        // order by
         $query->orderBy($sort, $sortOrder);
 
+        // search by
         $search = trim($search);
         if (strlen($search)) {
             $query->searchWhere($search, $searchableFields);
