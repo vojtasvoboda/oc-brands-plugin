@@ -1,14 +1,23 @@
 # Brands plugin for OctoberCMS
 
-Show your brands, partners, portfolio or anything else on your page. No other plugin requirements. Tested with latest October CMS build 382.
+Show your brands, partners, projects, showcases, portfolio or anything else on your page. No other plugin requirements. 
+Tested with latest October CMS build 382.
 
 ## Key features
 
-- list of brands with pagination
+- list of all brands with pagination
+- one brand can be in many categories, with unlimited images
 - filtration by categories
 - customizable Bootstrap layout
 - show brand detail with nice photo gallery
 - translations implemented
+
+## Use cases
+
+- show my clients logos with external links (or without)
+- show projects for my clients represented by logos (photogallery at brand detail)
+- show partners with cooperation details
+- show my portfolio with screenshots
 
 ## Create brands page
 
@@ -70,6 +79,14 @@ categoryPage = "brands"
 {% component 'brand' %}
 ```
 
+## Brand's links
+
+Each brand can have multiple types of links:
+
+1. Link to brand detail - fill only slug and create brand detail page.
+2. External link - fill external link parameter, it will override internal link.
+3. No link - shows logo without any link, it will override all links above.
+
 ## TODO
 
 - fix page title at brand detail
@@ -77,3 +94,11 @@ categoryPage = "brands"
 - batch delete for categories
 - tags management
 - brand detail - paginator for gallery
+
+## Contributing
+
+Please send Pull Request to the master branch. Please add also unit tests and make sure all unit tests are green.
+
+## License
+
+Brands plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
