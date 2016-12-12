@@ -29,6 +29,11 @@ return [
             'logo' => 'Logo',
             'gallery' => 'Gallery',
             'description' => 'Description',
+            'links' => 'Odkazy',
+            'external_link' => 'Externí URL',
+            'external_link_comment' => 'Přetíží interní odkaz',
+            'no_link' => 'Bez odkazu',
+            'no_link_comment' => 'Logo se zobrazí bez jakéhokoli odkazu',
         ],
         'category' => [
             'id' => 'ID',

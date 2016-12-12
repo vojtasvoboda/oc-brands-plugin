@@ -1,8 +1,8 @@
 <?php namespace VojtaSvoboda\Brands\Updates;
 
-use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateBrandCategoryTable extends Migration
 {
@@ -23,10 +23,6 @@ class CreateBrandCategoryTable extends Migration
 
     public function down()
     {
-        Schema::table('vojtasvoboda_brands_brand_category', function($table) {
-            $table->dropForeign('vojtasvoboda_brands_brand_category_brand_id_category_id_index');
-            $table->dropForeign('vojtasvoboda_brands_brand_category_category_id_foreign');
-        });
         Schema::dropIfExists('vojtasvoboda_brands_brand_category');
     }
 }

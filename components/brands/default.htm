@@ -3,11 +3,11 @@
     <div class="row">
         {% for brand in __SELF__.brands %}
         <div class="item col-md-{{ __SELF__.columnSize }}">
-            <a href="{{ brand.url }}">
+            {% if not brand.no_link %}<a href="{{ brand.url }}"{% if brand.external_link %} target="_blank"{% endif %}>{% endif %}
                 {% if brand.logo %}
                 <img src="{{ brand.logo.getThumb(__SELF__.logoWidth, __SELF__.logoHeight, 'auto') }}" alt="{{ brand.name }}" class="img-responsive" />
                 {% endif %}
-            </a>
+            {% if not brand.no_link %}</a>{% endif %}
             {% if brand.categories %}
             <div class="categories">
                 {% for category in brand.categories %}
@@ -17,9 +17,9 @@
                 {% endfor %}
             </div>
             {% endif %}
-            <a href="{{ brand.url }}">
+            {% if not brand.no_link %}<a href="{{ brand.url }}"{% if brand.external_link %} target="_blank"{% endif %}>{% endif %}
                 {{ brand.name }}
-            </a>
+            {% if not brand.no_link %}</a>{% endif %}
         </div>
         {% endfor %}
     </div>

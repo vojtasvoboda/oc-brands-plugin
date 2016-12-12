@@ -29,6 +29,11 @@ return [
             'logo' => 'Logo',
             'gallery' => 'Gallery',
             'description' => 'Description',
+            'links' => 'Links',
+            'external_link' => 'External URL',
+            'external_link_comment' => 'Override internal slug parameter',
+            'no_link' => 'No link',
+            'no_link_comment' => 'Show logo without any link',
         ],
         'category' => [
             'id' => 'ID',

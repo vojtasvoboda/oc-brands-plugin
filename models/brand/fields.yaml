@@ -39,3 +39,13 @@ tabs:
             label: vojtasvoboda.brands::lang.labels.brand.gallery
             type: fileupload
             mode: image
+        external_link:
+            tab: vojtasvoboda.brands::lang.labels.brand.links
+            label: vojtasvoboda.brands::lang.labels.brand.external_link
+            type: text
+            comment: vojtasvoboda.brands::lang.labels.brand.external_link_comment
+        no_link:
+            tab: vojtasvoboda.brands::lang.labels.brand.links
+            label: vojtasvoboda.brands::lang.labels.brand.no_link
+            type: switch
+            comment: vojtasvoboda.brands::lang.labels.brand.no_link_comment

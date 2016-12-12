@@ -169,10 +169,17 @@ class Brands extends ComponentBase
         $detailPage = $this->brandPage;
         $categoryPage = $this->categoryPage;
 
-        $items->each(function ($item) use ($detailPage, $categoryPage) {
-            $item->url = $this->controller->pageUrl($detailPage, [
-                'slug' => $item->slug,
-            ]);
+        $items->each(function ($item) use ($detailPage, $categoryPage)
+        {
+            if ($item->no_link) {
+                $item->url = null;
+            } elseif ($item->external_link) {
+                $item->url = $item->external_link;
+            } else {
+                $item->url = $this->controller->pageUrl($detailPage, [
+                    'slug' => $item->slug,
+                ]);
+            }
 
             $item->categories->each(function($category) use ($categoryPage) {
                 $category->url = $this->controller->pageUrl($categoryPage, [

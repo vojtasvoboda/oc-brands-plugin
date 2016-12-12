@@ -14,8 +14,10 @@ class CreateBrandsTable extends Migration
             $table->increments('id')->unsigned();
 
             $table->string('name', 300);
-            $table->string('slug', 300);
+            $table->string('slug', 300)->nullable();
             $table->text('description', 300)->nullable();
+            $table->string('external_link', 300)->nullable();
+            $table->boolean('no_link')->default(false);
 
             $table->boolean('enabled')->default(true);
             $table->smallInteger('sort_order')->nullable();
