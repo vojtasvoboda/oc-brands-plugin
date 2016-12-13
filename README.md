@@ -5,16 +5,16 @@ Tested with latest October CMS build 382.
 
 ## Key features
 
-- list of all brands with pagination
-- one brand can be in many categories, with unlimited images
-- filtration by categories
-- customizable Bootstrap layout
-- show brand detail with a nice photo gallery
-- translations implemented
+- list of all brands with **pagination**
+- customizable **Bootstrap layout**
+- one brand can be in many categories, with logo and **unlimited images**
+- **filtration** by categories
+- show brand detail with a **photo gallery**
+- **translations** implemented
 
 ## Use cases
 
-- show my clients logos with external links (or without)
+- show clients logos with external links (or without)
 - show projects for my clients represented by logos (with photogallery at brand detail)
 - show partners with cooperation details
 - show my portfolio with screenshots
