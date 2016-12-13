@@ -9,13 +9,13 @@ Tested with latest October CMS build 382.
 - one brand can be in many categories, with unlimited images
 - filtration by categories
 - customizable Bootstrap layout
-- show brand detail with nice photo gallery
+- show brand detail with a nice photo gallery
 - translations implemented
 
 ## Use cases
 
 - show my clients logos with external links (or without)
-- show projects for my clients represented by logos (photogallery at brand detail)
+- show projects for my clients represented by logos (with photogallery at brand detail)
 - show partners with cooperation details
 - show my portfolio with screenshots
 
