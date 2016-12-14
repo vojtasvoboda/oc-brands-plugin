@@ -9,12 +9,12 @@ Tested with latest October CMS build 382.
 
 ## Key features
 
-- list of all brands with **pagination**
-- customizable **Bootstrap layout**
-- one brand can be in many categories, with logo and **unlimited images**
-- **filtration** by categories
+- list of all brands with **pagination** and **category filtration**
+- customizable **Bootstrap layout** (1-12 columns)
+- one brand can be in **many categories**, with logo and **unlimited images**
 - show brand detail with a **photo gallery**
 - **translations** implemented
+- SiteSearch plugin **native support**
 
 ## Use cases
 
