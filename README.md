@@ -1,5 +1,9 @@
 # Brands plugin for OctoberCMS
 
+[![Codacy](https://img.shields.io/codacy/d74cf67246dc48b48971de7ab928650e.svg)](https://www.codacy.com/app/vojtasvoboda/oc-brands-plugin)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/g/vojtasvoboda/oc-brands-plugin.svg)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-brands-plugin/?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-brands-plugin/blob/master/LICENSE)
+
 Show your brands, partners, projects, showcases, portfolio or anything else on your page. No other plugin requirements. 
 Tested with latest October CMS build 382.
 
