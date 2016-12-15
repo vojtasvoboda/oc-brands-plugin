@@ -93,11 +93,11 @@ Each brand can have multiple types of links:
 
 ## TODO
 
-- fix page title at brand detail
-- changing order for categories
-- batch delete for categories
-- tags management
-- brand detail - paginator for gallery
+- [ ] fix page title at brand detail
+- [ ] changing order for categories
+- [ ] batch delete for categories
+- [ ] tags management
+- [ ] brand detail - paginator for gallery
 
 ## Contributing
 
