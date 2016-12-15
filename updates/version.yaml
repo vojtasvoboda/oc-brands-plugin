@@ -4,3 +4,4 @@
   - create_categories_table.php
   - create_brand_category_table.php
 1.0.2: Add CS locale
+1.0.3: Add DE locale (thanks to Patrick Durrer)
