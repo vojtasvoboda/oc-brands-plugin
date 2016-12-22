@@ -91,6 +91,12 @@ Each brand can have multiple types of links:
 2. External link - fill external link parameter, it will override internal link.
 3. No link - shows logo without any link, it will override all links above.
 
+## Extending plugin
+
+I'm using this plugin as example how to build first plugin ever, because it covers managing one entity (create, update, delete, change order), create one relation (brand - category) and render all items at the frontend.
+
+I also created examples, how to easily extend plugin's functionality and put all these example to [Brands extending examples](https://github.com/vojtasvoboda/oc-brands-plugin-override-example) repository.
+
 ## TODO
 
 - [ ] fix page title at brand detail
