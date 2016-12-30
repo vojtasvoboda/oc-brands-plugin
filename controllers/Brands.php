@@ -9,8 +9,8 @@ use Backend\Classes\Controller;
 class Brands extends Controller
 {
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\ListController',
         'Backend\Behaviors\ReorderController',
     ];
 
