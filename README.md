@@ -9,7 +9,7 @@ Tested with latest October CMS build 382.
 
 ## Key features
 
-- list of all brands with **pagination** and **category filtration**
+- list of all brands with **pagination**, **category filtration** and **letter filtration**
 - customizable **Bootstrap layout** (1-12 columns)
 - one brand can be in **many categories**, with logo and **unlimited images**
 - show brand detail with a **photo gallery**
@@ -29,8 +29,9 @@ Tested with latest October CMS build 382.
 - if you want to filter by brand categories, insert category filter to URL: `/brands/:category?`
 - insert Brands component
 - pick Brand page (brand detail) and Category page (brands in category)
+- if you want to filter by letters, insert Brand letters component
 
-Example of Brands page with category filtration:
+Example of Brands page with category and letter filtration:
 
 ```
 title = "Brands"
@@ -48,8 +49,15 @@ pageNumber = "{{ page }}"
 perRow = 6
 logoWidth = 300
 logoHeight = 300
+
+[letters]
+brandsPage = "brands"
 ==
-<h1>Brands {{ category.name }}</h1>
+<h1>
+	Brands
+	{% if category %} in category {{ category.name }}{% endif %}
+	{% if letter %} starts with "{{ letter }}"{% endif %}
+</h1>
 
 {% if category %}
 <p>
@@ -58,6 +66,8 @@ logoHeight = 300
     </a>
 </p>
 {% endif %}
+
+{% component 'letters' %}
 
 {% component 'brands' %}
 ```

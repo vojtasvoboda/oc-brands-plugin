@@ -17,6 +17,9 @@ class Brands extends ComponentBase
     /** @var Category $category */
     public $category;
 
+    /** @var string $letter */
+    public $letter;
+
     /** @var string $detailPage Reference to the page name for linking to brand detail. */
     public $brandPage;
 
@@ -61,6 +64,13 @@ class Brands extends ComponentBase
                 'type' => 'string',
                 'default' => '{{ :category }}',
                 'group' => 'Category',
+            ],
+            'letterFilter' => [
+                'title' => 'Starts with letter',
+                'description' => 'Show only brands starts with this letter',
+                'type' => 'string',
+                'default' => '{{ :letter }}',
+                'group' => 'Letter',
             ],
             'perPage' => [
                 'title' => 'Brands per page',
@@ -123,6 +133,9 @@ class Brands extends ComponentBase
         }
         $this->page['category'] = $this->category;
 
+        // letter filter
+        $this->page['letter'] = $this->letter = $this->property('letterFilter');
+
         // page links
         $this->brandPage = $this->page['brandPage'] = $this->property('brandPage');
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
@@ -150,6 +163,10 @@ class Brands extends ComponentBase
 
         if ($this->category) {
             $parameters['category'] = $this->category;
+        }
+
+        if ($this->letter) {
+            $parameters['letter'] = $this->letter;
         }
 
         $items = Brand::listFrontEnd($parameters);

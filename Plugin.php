@@ -73,6 +73,7 @@ class Plugin extends PluginBase
         return [
             'VojtaSvoboda\Brands\Components\Brands' => 'brands',
             'VojtaSvoboda\Brands\Components\Brand' => 'brand',
+            'VojtaSvoboda\Brands\Components\Letters' => 'letters',
         ];
     }
 }

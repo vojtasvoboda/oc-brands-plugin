@@ -70,6 +70,7 @@ class Brand extends Model
             'search'     => '',
             'enabled'    => true,
             'category'   => null,
+            'letter'     => null,
         ], $options));
 
         // search by config
@@ -85,6 +86,12 @@ class Brand extends Model
             $query->whereHas('categories', function ($query) use ($category) {
                 $query->where('category_id', $category->id);
             });
+        }
+
+        if ($letter && strlen($letter) == 1) {
+            $query
+                ->where('name', 'LIKE', mb_strtolower($letter) . '%')
+                ->orWhere('name', 'LIKE', mb_strtoupper($letter) . '%');
         }
 
         // order by
