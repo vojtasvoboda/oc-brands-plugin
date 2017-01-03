@@ -6,7 +6,7 @@ use VojtaSvoboda\Brands\Models\Brand as Model;
 
 class Letters extends ComponentBase
 {
-    public $letters;
+    public $characters;
 
     public function componentDetails()
     {
@@ -30,7 +30,7 @@ class Letters extends ComponentBase
 
     public function onRun()
     {
-        $this->page['letters'] = $this->letters = $this->getBrandLetters();
+        $this->page['characters'] = $this->characters = $this->getBrandCharacters();
     }
 
     /**
@@ -38,7 +38,7 @@ class Letters extends ComponentBase
      *
      * @return array
      */
-    public function getBrandLetters()
+    public function getBrandCharacters()
     {
         // get unique letters
         $letters = [];

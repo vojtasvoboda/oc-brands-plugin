@@ -1,12 +1,12 @@
-{% set letters = __SELF__.letters %}
+{% set chars = __SELF__.characters %}
 
-{% if letters %}
+{% if chars %}
 <div class="col-sm-12">
     <ul class="pagination">
-        {% for letter in letters %}
-        <li{% if letter.name == this.param.letter %} class="active"{% endif %}>
-            <a href="{{ letter.url }}"{% if letter.name == this.param.letter %} class="active"{% endif %}>
-                {{ letter.name }} <span class="badge">{{ letter.count }}</span>
+        {% for char in chars %}
+        <li{% if char.name == this.param.letter %} class="active"{% endif %}>
+            <a href="{{ char.url }}"{% if char.name == this.param.letter %} class="active"{% endif %}>
+                {{ char.name }} <span class="badge">{{ char.count }}</span>
             </a>
         </li>
         {% endfor %}
