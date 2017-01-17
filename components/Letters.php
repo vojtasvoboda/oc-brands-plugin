@@ -42,7 +42,7 @@ class Letters extends ComponentBase
     {
         // get unique letters
         $letters = [];
-        Model::all()->each(function($brand) use (&$letters)
+        Model::isEnabled()->get()->each(function($brand) use (&$letters)
         {
             // get letter
             $letter = mb_strtolower(mb_substr($brand->name, 0, 1));

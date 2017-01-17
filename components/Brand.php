@@ -50,11 +50,13 @@ class Brand extends ComponentBase
         $item = Model::where('slug', $slug)->isEnabled()->first();
         $categoryPage = $this->categoryPage;
 
-        $item->categories->each(function($category) use ($categoryPage) {
-            $category->url = $this->controller->pageUrl($categoryPage, [
-                'category' => $category->slug,
-            ]);
-        });
+        if ($item) {
+            $item->categories->each(function($category) use ($categoryPage) {
+                $category->url = $this->controller->pageUrl($categoryPage, [
+                    'category' => $category->slug,
+                ]);
+            });
+        }
 
         return $item;
     }

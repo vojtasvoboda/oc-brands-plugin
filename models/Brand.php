@@ -90,8 +90,10 @@ class Brand extends Model
 
         if ($letter && strlen($letter) == 1) {
             $query
-                ->where('name', 'LIKE', mb_strtolower($letter) . '%')
-                ->orWhere('name', 'LIKE', mb_strtoupper($letter) . '%');
+                ->where(function($q) use ($letter) {
+                    $q->where('name', 'LIKE', mb_strtolower($letter) . '%')
+                        ->orWhere('name', 'LIKE', mb_strtoupper($letter) . '%');
+                });
         }
 
         // order by
