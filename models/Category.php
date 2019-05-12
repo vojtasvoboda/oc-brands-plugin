@@ -33,7 +33,8 @@ class Category extends Model
     ];
 
     public $belongsToMany = [
-        'brands' => ['VojtaSvoboda\Brands\Models\Brand',
+        'brands' => [
+            'VojtaSvoboda\Brands\Models\Brand',
             'table' => 'vojtasvoboda_brands_brand_category',
             'order' => 'name desc',
             'scope' => 'isEnabled',
@@ -44,5 +45,10 @@ class Category extends Model
     public function scopeIsEnabled($query)
     {
         return $query->where('enabled', true);
+    }
+
+    public function getBrandsCountAttribute()
+    {
+        return $this->brands()->count();
     }
 }

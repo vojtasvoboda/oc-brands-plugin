@@ -1,0 +1,6 @@
+scopes:
+  category:
+    label: Category
+    modelClass: VojtaSvoboda\Brands\Models\Category
+    conditions: id in (select brand_id from vojtasvoboda_brands_brand_category where category_id in (:filtered))
+    nameFrom: name

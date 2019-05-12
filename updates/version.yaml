@@ -10,3 +10,4 @@
 1.0.6: Fix letters component when replacing component with own code
 1.0.7: Fix showing only enabled brands
 1.0.8: Categories sort ordering
+1.0.9: Add filtering by categories

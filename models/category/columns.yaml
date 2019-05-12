@@ -11,6 +11,10 @@ columns:
         label: vojtasvoboda.brands::lang.labels.category.slug
         searchable: true
         sortable: true
+    brands_count:
+        label: Count
+        sortable: true
+        clickable: false
     sort_order:
         label: vojtasvoboda.brands::lang.labels.category.sort_order
         sortable: true

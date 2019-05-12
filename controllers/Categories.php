@@ -1,5 +1,6 @@
 <?php namespace VojtaSvoboda\Brands\Controllers;
 
+use Backend;
 use BackendMenu;
 use Backend\Classes\Controller;
 
@@ -27,5 +28,14 @@ class Categories extends Controller
         parent::__construct();
 
         BackendMenu::setContext('VojtaSvoboda.Brands', 'brands', 'categories');
+    }
+
+    public function listOverrideColumnValue($record, $columnName, $definition = null)
+    {
+        if ($columnName == 'brands_count') {
+            $link = Backend::url('vojtasvoboda/brands/brands?category=' . $record->id);
+
+            return '<a class="btn btn-xs btn-primary" href="' . $link . '">' . $record->brands_count . '</a>';
+        }
     }
 }
