@@ -1,4 +1,4 @@
-title: Brands
+title: Reorder brands
 modelClass: VojtaSvoboda\Brands\Models\Brand
 nameFrom: name
 toolbar:

@@ -1,4 +1,4 @@
-title: Categories
+title: Reorder categories
 modelClass: VojtaSvoboda\Brands\Models\Category
 nameFrom: name
 toolbar:
